@@ -1,0 +1,10 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.sportradar.us")
+
+conn.request("GET", "/soccer-extended/trial/v4/en/players/sr:player:159665/summaries.xml?api_key=3grdgmps29kgktjwwwg3qr5j")
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
